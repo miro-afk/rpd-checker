@@ -1,0 +1,288 @@
+/* ResultPage.css */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  color: black;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-left,
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-right {
+  justify-content: flex-end;
+}
+
+.header-center {
+  flex: 2;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+  background: #667eea;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+.result-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.result-content {
+  display: flex;
+  gap: 30px;
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pdf-preview {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.pdf-preview h2 {
+  margin: 0 0 20px 0;
+  color: #2d3748;
+  font-size: 20px;
+}
+
+.pdf-iframe {
+  flex: 1;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.no-pdf {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7fafc;
+  border-radius: 8px;
+  color: #a0aec0;
+}
+
+.analysis-report {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow-y: auto;
+  max-height: calc(100vh - 120px);
+}
+
+.analysis-report h2 {
+  margin: 0 0 20px 0;
+  color: #2d3748;
+  font-size: 20px;
+}
+
+.report-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.report-section {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.status-icon {
+  font-size: 20px;
+}
+
+.section-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2d3748;
+}
+
+.section-content {
+  padding: 16px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.success-content {
+  background: #f0fff4;
+  color: #22543d;
+}
+
+.error-content {
+  background: #fff5f5;
+  color: #742a2a;
+}
+
+.summary {
+  border-top: 2px solid #e2e8f0;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.summary h3 {
+  margin: 0 0 16px 0;
+  color: #2d3748;
+  font-size: 18px;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.stat-value {
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.stat-value.success {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.stat-value.error {
+  background: #fed7d7;
+  color: #742a2a;
+}
+
+.loading-container, .error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #e2e8f0;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .result-content {
+    flex-direction: column;
+  }
+  
+  .pdf-preview {
+    height: 400px;
+  }
+  
+  .analysis-report {
+    max-height: none;
+  }
+
+  /* Стили для списка ошибок */
+.error-list {
+  margin-top: 8px;
+  padding-left: 8px;
+}
+
+.error-item {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.error-content {
+  background-color: #ffebee;
+  border-left: 3px solid #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.success-content {
+  background-color: #e8f5e9;
+  border-left: 3px solid #4caf50;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.section-content p {
+  margin: 0;
+}
+
+
+}
